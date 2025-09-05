@@ -54,7 +54,7 @@ const SpinWheel = () => {
 
   return (
     <div className="flex flex-col items-center relative">
-      <div className="marker"></div>
+      <div className="marker" />
       <div
         className="wheel-container"
         style={{ 
@@ -65,6 +65,9 @@ const SpinWheel = () => {
           <Slice key={index} segment={segment} index={index} segments={segments} />
         ))}
       </div>
+ {result && <div className="mt-4 text-2xl font-bold text-rose-500">
+Συγχαρητήρια Κερδίσατε {result} !!
+      </div>}
       <button
         onClick={spin}
         disabled={spinning}
@@ -72,9 +75,7 @@ const SpinWheel = () => {
       >
         {spinning ? "Spinning..." : "Spin"}
       </button>
-      {result && <div className="mt-4 text-xl text-rose-500">
-Συγχαρητήρια Κερδίσατε ένα {result} !!
-      </div>}
+   
      
     </div>
   );

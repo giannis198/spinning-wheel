@@ -22,16 +22,17 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-10 space-y-10">
+    <main className="flex min-h-screen flex-col items-center p-10 space-y-4">
       <div className="w-48 h-48 flex gap-5 items-center">
         <Image src={logo} objectFit="contain" alt="elas" />
-     
       </div>
       
-   <h1 className="text-4xl font-bold text-sky-500">ΗΕLEXPO ΔΕΘ 2025</h1>
+      <div className="items-center flex flex-col space-y-2">
+ <h1 className="text-4xl font-bold text-sky-500">ΗΕLEXPO ΔΕΘ 2025</h1>
       <h2 className="text-4xl font-bold text-[#28449a]">Ελληνική Αστυνομία</h2>
       <h2 className="text-3xl font-semibold text-[#28449a]">Γυρίστε Τον Τροχό Για Να Κερδίσετε Δώρα!</h2>
-
+      </div>
+  
       <SpinWheel />
 
       {/* Confetti */}
