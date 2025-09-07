@@ -1,11 +1,10 @@
-
 // interface SliceProps {
 //   segment: string;
 //   index: number;
 //   segments: string[];
 // }
 
-// const Slice = ({ segment, index, segments }: SliceProps) => {
+// const NewSlice = ({ segment, index, segments }: SliceProps) => {
 //   const segmentAngle = 360 / segments.length;
 //   const rotation = segmentAngle * index;
 //   const skewAngle = 90 - segmentAngle;
@@ -15,13 +14,12 @@
 //       className="segment"
 //       style={{
 //         transform: `rotate(${rotation}deg) skewY(${skewAngle}deg)`,
-//         backgroundColor: `hsl(${rotation}, 70%, 50%)`,
 //       }}
 //     >
 //       <span
-//       className="text-sm"
+//         className="text-sm"
 //         style={{
-//           transform: `skewY(${-skewAngle}deg) rotate(${segmentAngle / skewAngle - 0.4 }deg)`,
+//           transform: `skewY(${-skewAngle}deg) rotate(${segmentAngle / skewAngle - 0.4}deg)`,
 //           transformOrigin: '100% 100%',
 //           writingMode: 'vertical-rl',
 //           textOrientation: 'mixed',
@@ -35,10 +33,9 @@
 //   );
 // };
 
+// export default NewSlice;
 
 
-
-// export default Slice;
 
 interface SliceProps {
   segment: string;
@@ -46,20 +43,44 @@ interface SliceProps {
   segments: string[];
 }
 
-const Slice = ({ segment, index, segments }: SliceProps) => {
+const NewSlice = ({ segment, index, segments }: SliceProps) => {
   const segmentAngle = 360 / segments.length;
   const rotation = segmentAngle * index;
   const skewAngle = 90 - segmentAngle;
-  
-  // Calculate HSL color based on rotation
-  const hslColor = `hsl(${rotation}, 70%, 50%)`;
 
+  // Special handling for exactly 2 segments
+  if (segments.length === 2) {
+    return (
+      <div
+        className="segment"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+        }}
+      >
+        <span
+          className="text-sm"
+          style={{
+            transform: `translateX(-50%) rotate(${index === 0 ? 0 : 180}deg)`,
+            transformOrigin: 'center',
+            writingMode: 'horizontal-tb',
+            textOrientation: 'mixed',
+            position: 'absolute',
+            left: '50%',
+            top: index === 0 ? '25%' : '75%',
+          }}
+        >
+          {segment}
+        </span>
+      </div>
+    );
+  }
+
+  // Default handling for other cases
   return (
     <div
       className="segment"
       style={{
         transform: `rotate(${rotation}deg) skewY(${skewAngle}deg)`,
-        backgroundColor: hslColor,
       }}
     >
       <span
@@ -79,4 +100,4 @@ const Slice = ({ segment, index, segments }: SliceProps) => {
   );
 };
 
-export default Slice;
+export default NewSlice;

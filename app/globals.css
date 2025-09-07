@@ -11,15 +11,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* CSS */
 .wheel-container {
+  --size: 400px;            /* single source of truth */
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   border: 8px solid #280A3E;
   overflow: hidden;
   transition: transform 3s ease-out;
-  transform: rotate(45deg);
 }
 
 .segment {
@@ -27,28 +29,29 @@ body {
   width: 50%;
   height: 50%;
   transform-origin: 100% 100%;
+  /* important: make slices transparent; colors come from the container bg */
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
 .segment span {
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  transform: rotate(45deg);
 }
 
 
 .marker {
-  width: 0;
-  height: 0;
+  width: 0; height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 30px solid  #91ADC8;
+  border-top: 30px solid #91ADC8;
   position: absolute;
-  top: -10px;
-  left: 50%;
+  top: -10px; left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
+

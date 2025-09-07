@@ -87,7 +87,7 @@ const EditPage = () => {
           </li>
         ))}
       </ul>
-      <Link href="/" className="text-blue-500 mt-4 inline-block">
+      <Link href="/" className="text-white mt-4 inline-block bg-emerald-700 p-2 underline">
         Back to Wheel
       </Link>
     </div>

@@ -6,6 +6,8 @@ import { useStore } from "@/lib/store";
 import SpinWheel from "@/components/SpinWheel";
 import Image from "next/image";
 import logo from "@/public/logo.png"
+import Link from "next/link";
+import NewWheel from "@/components/NewWheel";
 
 export default function Home() {
   const showConfetti = useStore((state) => state.showConfetti);
@@ -33,8 +35,8 @@ export default function Home() {
       <h2 className="text-3xl font-semibold text-[#28449a]">Γυρίστε Τον Τροχό Για Να Κερδίσετε Δώρα!</h2>
       </div>
   
-      <SpinWheel />
-
+      {/* <SpinWheel /> */}
+<NewWheel />
       {/* Confetti */}
       {showConfetti && (
         <Confetti
@@ -44,6 +46,9 @@ export default function Home() {
           recycle={false}
         />
       )}
+      <Link href="/edit"> <button className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 underline">
+                  Edit SpinningWheel
+                </button></Link>
     </main>
   );
 }
