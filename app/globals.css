@@ -14,7 +14,7 @@ body {
 
 /* CSS */
 .wheel-container {
-  --size: 400px;            /* single source of truth */
+  --size: 350px;            /* single source of truth */
   position: relative;
   width: var(--size);
   height: var(--size);
