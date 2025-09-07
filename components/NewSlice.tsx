@@ -62,7 +62,7 @@ const NewSlice = ({ segment, index, segments }: SliceProps) => {
           style={{
             transform: `translateX(-50%) rotate(${index === 0 ? 0 : 180}deg)`,
             transformOrigin: 'center',
-            writingMode: 'horizontal-tb',
+            writingMode: 'vertical-rl',
             textOrientation: 'mixed',
             position: 'absolute',
             left: '50%',
@@ -87,7 +87,7 @@ const NewSlice = ({ segment, index, segments }: SliceProps) => {
         className="text-sm"
         style={{
           transform: `skewY(${-skewAngle}deg) rotate(${segmentAngle / skewAngle - 0.4}deg)`,
-          transformOrigin: '100% 100%',
+          transformOrigin: '87% 66%',
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',
           width: '100%',

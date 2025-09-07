@@ -186,7 +186,7 @@ const NewWheel = () => {
       <button
         onClick={spin}
         disabled={spinning || segments.length === 0}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-400"
+        className="mt-4 px-6 py-4 bg-blue-500 text-white rounded disabled:bg-gray-400"
       >
         {spinning ? "Spinning..." : "Spin"}
       </button>
